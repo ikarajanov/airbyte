@@ -1,0 +1,264 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Location",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Google identifier for this location in the form: locations/{locationId}."
+      },
+      "languageCode": {
+        "type": "string",
+        "description": "Immutable. The language of the location. Set during creation and not updateable."
+      },
+      "storeCode": {
+        "type": "string",
+        "description": "Optional. External identifier for this location, which must be unique within a given account."
+      },
+      "title": {
+        "type": "string",
+        "description": "Required. Location name should reflect your business's real-world name."
+      },
+      "phoneNumbers": {
+        "type": "object",
+        "description": "Optional. The different phone numbers that customers can use to get in touch with the business.",
+        "properties": {
+          "primaryPhone": {
+            "type": "string"
+          },
+          "additionalPhones": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "categories": {
+        "type": "object",
+        "description": "Optional. The different categories that describe the business.",
+        "properties": {
+          "primaryCategory": {
+            "type": "string"
+          },
+          "additionalCategories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "storefrontAddress": {
+        "type": "object",
+        "description": "Optional. A precise, accurate address to describe your business location.",
+        "properties": {
+          "addressLines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locality": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          }
+        }
+      },
+      "websiteUri": {
+        "type": "string",
+        "description": "Optional. A URL for this business."
+      },
+      "regularHours": {
+        "type": "object",
+        "description": "Optional. Operating hours for the business.",
+        "properties": {
+          "periods": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "openDay": {
+                  "type": "string"
+                },
+                "openTime": {
+                  "type": "string"
+                },
+                "closeDay": {
+                  "type": "string"
+                },
+                "closeTime": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "specialHours": {
+        "type": "object",
+        "description": "Optional. Special hours for the business.",
+        "properties": {
+          "specialHourPeriods": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "startDate": {
+                  "type": "string"
+                },
+                "endDate": {
+                  "type": "string"
+                },
+                "openTime": {
+                  "type": "string"
+                },
+                "closeTime": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "serviceArea": {
+        "type": "object",
+        "description": "Optional. Service area businesses provide their service at the customer's location.",
+        "properties": {
+          "businessType": {
+            "type": "string"
+          },
+          "places": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "labels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Optional. A collection of free-form strings to allow you to tag your business."
+      },
+      "adWordsLocationExtensions": {
+        "type": "object",
+        "description": "Optional. Additional information that is surfaced in AdWords.",
+        "properties": {
+          "adPhone": {
+            "type": "string"
+          }
+        }
+      },
+      "latlng": {
+        "type": "object",
+        "description": "Optional. User-provided latitude and longitude.",
+        "properties": {
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          }
+        }
+      },
+      "openInfo": {
+        "type": "object",
+        "description": "Optional. A flag that indicates whether the location is currently open for business.",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "canReopen": {
+            "type": "boolean"
+          }
+        }
+      },
+      "metadata": {
+        "type": "object",
+        "description": "Output only. Additional non-user-editable information.",
+        "properties": {
+          "placeId": {
+            "type": "string"
+          }
+        }
+      },
+      "profile": {
+        "type": "object",
+        "description": "Optional. Describes your business in your own voice.",
+        "properties": {
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "relationshipData": {
+        "type": "object",
+        "description": "Optional. All locations and chain related to this one.",
+        "properties": {
+          "parentChain": {
+            "type": "string"
+          }
+        }
+      },
+      "moreHours": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "description": "Optional. More hours for a business's different departments or specific customers.",
+          "properties": {
+            "hoursType": {
+              "type": "string"
+            },
+            "periods": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "openDay": {
+                    "type": "string"
+                  },
+                  "openTime": {
+                    "type": "string"
+                  },
+                  "closeDay": {
+                    "type": "string"
+                  },
+                  "closeTime": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "serviceItems": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "description": "Optional. List of services supported by merchants.",
+          "properties": {
+            "serviceName": {
+              "type": "string"
+            },
+            "serviceTypeId": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "required": ["name", "title"]
+  }
+  
