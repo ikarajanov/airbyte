@@ -345,7 +345,7 @@ if [ -z "$dockerDetachedMode" ]; then
   TelemetryDockerUp &
 fi
 
-docker compose up $dockerDetachedMode
+docker compose up $dockerDetachedMode --force-recreate
 
 # $? is the exit code of the last command. So here: docker compose up
 if test $? -ne 0; then
