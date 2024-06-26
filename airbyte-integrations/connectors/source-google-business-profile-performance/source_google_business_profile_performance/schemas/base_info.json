@@ -1,264 +1,130 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Location",
-    "type": "object",
-    "properties": {
-      "name": {
-        "type": "string",
-        "description": "Google identifier for this location in the form: locations/{locationId}."
-      },
-      "languageCode": {
-        "type": "string",
-        "description": "Immutable. The language of the location. Set during creation and not updateable."
-      },
-      "storeCode": {
-        "type": "string",
-        "description": "Optional. External identifier for this location, which must be unique within a given account."
-      },
-      "title": {
-        "type": "string",
-        "description": "Required. Location name should reflect your business's real-world name."
-      },
-      "phoneNumbers": {
-        "type": "object",
-        "description": "Optional. The different phone numbers that customers can use to get in touch with the business.",
-        "properties": {
-          "primaryPhone": {
-            "type": "string"
-          },
-          "additionalPhones": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "categories": {
-        "type": "object",
-        "description": "Optional. The different categories that describe the business.",
-        "properties": {
-          "primaryCategory": {
-            "type": "string"
-          },
-          "additionalCategories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "storefrontAddress": {
-        "type": "object",
-        "description": "Optional. A precise, accurate address to describe your business location.",
-        "properties": {
-          "addressLines": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "locality": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "postalCode": {
-            "type": "string"
-          },
-          "country": {
-            "type": "string"
-          }
-        }
-      },
-      "websiteUri": {
-        "type": "string",
-        "description": "Optional. A URL for this business."
-      },
-      "regularHours": {
-        "type": "object",
-        "description": "Optional. Operating hours for the business.",
-        "properties": {
-          "periods": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "openDay": {
-                  "type": "string"
-                },
-                "openTime": {
-                  "type": "string"
-                },
-                "closeDay": {
-                  "type": "string"
-                },
-                "closeTime": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "specialHours": {
-        "type": "object",
-        "description": "Optional. Special hours for the business.",
-        "properties": {
-          "specialHourPeriods": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "startDate": {
-                  "type": "string"
-                },
-                "endDate": {
-                  "type": "string"
-                },
-                "openTime": {
-                  "type": "string"
-                },
-                "closeTime": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "serviceArea": {
-        "type": "object",
-        "description": "Optional. Service area businesses provide their service at the customer's location.",
-        "properties": {
-          "businessType": {
-            "type": "string"
-          },
-          "places": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "labels": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Optional. A collection of free-form strings to allow you to tag your business."
-      },
-      "adWordsLocationExtensions": {
-        "type": "object",
-        "description": "Optional. Additional information that is surfaced in AdWords.",
-        "properties": {
-          "adPhone": {
-            "type": "string"
-          }
-        }
-      },
-      "latlng": {
-        "type": "object",
-        "description": "Optional. User-provided latitude and longitude.",
-        "properties": {
-          "latitude": {
-            "type": "number"
-          },
-          "longitude": {
-            "type": "number"
-          }
-        }
-      },
-      "openInfo": {
-        "type": "object",
-        "description": "Optional. A flag that indicates whether the location is currently open for business.",
-        "properties": {
-          "status": {
-            "type": "string"
-          },
-          "canReopen": {
-            "type": "boolean"
-          }
-        }
-      },
-      "metadata": {
-        "type": "object",
-        "description": "Output only. Additional non-user-editable information.",
-        "properties": {
-          "placeId": {
-            "type": "string"
-          }
-        }
-      },
-      "profile": {
-        "type": "object",
-        "description": "Optional. Describes your business in your own voice.",
-        "properties": {
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "relationshipData": {
-        "type": "object",
-        "description": "Optional. All locations and chain related to this one.",
-        "properties": {
-          "parentChain": {
-            "type": "string"
-          }
-        }
-      },
-      "moreHours": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "description": "Optional. More hours for a business's different departments or specific customers.",
-          "properties": {
-            "hoursType": {
-              "type": "string"
-            },
-            "periods": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "openDay": {
-                    "type": "string"
-                  },
-                  "openTime": {
-                    "type": "string"
-                  },
-                  "closeDay": {
-                    "type": "string"
-                  },
-                  "closeTime": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "serviceItems": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "description": "Optional. List of services supported by merchants.",
-          "properties": {
-            "serviceName": {
-              "type": "string"
-            },
-            "serviceTypeId": {
-              "type": "string"
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FetchMultiDailyMetricsTimeSeriesResponse",
+  "type": "object",
+  "properties": {
+    "multiDailyMetricTimeSeries": {
+      "description": "DailyMetrics and their corresponding time series.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/MultiDailyMetricTimeSeries"
+      }
+    }
+  },
+  "definitions": {
+    "MultiDailyMetricTimeSeries": {
+      "description": "Represents a list of tuples of DailyMetric-DailySubEntityType-TimeSeries.",
+      "type": "object",
+      "properties": {
+        "dailyMetricTimeSeries": {
+          "description": "List of DailyMetric-TimeSeries pairs.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DailyMetricTimeSeries"
           }
         }
       }
     },
-    "required": ["name", "title"]
+    "DailyMetricTimeSeries": {
+      "description": "Represents a single datapoint, where each datapoint is a DailyMetric-DailySubEntityType-TimeSeries tuple.",
+      "type": "object",
+      "properties": {
+        "dailyMetric": {
+          "description": "The DailyMetric that the TimeSeries represents.",
+          "type": "string",
+          "enum": [
+            "DAILY_METRIC_UNKNOWN",
+            "BUSINESS_IMPRESSIONS_DESKTOP_MAPS",
+            "BUSINESS_IMPRESSIONS_DESKTOP_SEARCH",
+            "BUSINESS_IMPRESSIONS_MOBILE_MAPS",
+            "BUSINESS_IMPRESSIONS_MOBILE_SEARCH",
+            "BUSINESS_CONVERSATIONS",
+            "BUSINESS_DIRECTION_REQUESTS",
+            "CALL_CLICKS",
+            "WEBSITE_CLICKS",
+            "BUSINESS_BOOKINGS",
+            "BUSINESS_FOOD_ORDERS",
+            "BUSINESS_FOOD_MENU_CLICKS"
+          ]
+        },
+        "dailySubEntityType": {
+          "description": "The DailySubEntityType that the TimeSeries represents. Will not be present when breakdown does not exist.",
+          "$ref": "#/definitions/DailySubEntityType"
+        },
+        "timeSeries": {
+          "description": "List of datapoints where each datapoint is a date-value pair.",
+          "$ref": "#/definitions/TimeSeries"
+        }
+      }
+    },
+    "DailySubEntityType": {
+      "description": "Represents all possible subentity types that are associated with DailyMetrics.",
+      "type": "object",
+      "properties": {
+        "dayOfWeek": {
+          "description": "Represents the day of the week. Eg: MONDAY. Currently supported DailyMetrics = NONE.",
+          "type": "string",
+          "enum": [
+            "DAY_OF_WEEK_UNSPECIFIED",
+            "MONDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+            "THURSDAY",
+            "FRIDAY",
+            "SATURDAY",
+            "SUNDAY"
+          ]
+        }
+      }
+    },
+    "TimeSeries": {
+      "description": "Represents a timeseries.",
+      "type": "object",
+      "properties": {
+        "datedValues": {
+          "description": "List of datapoints in the timeseries, where each datapoint is a date-value pair.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DatedValue"
+          }
+        }
+      }
+    },
+    "DatedValue": {
+      "description": "Represents a single datapoint in the timeseries, where each datapoint is a date-value pair.",
+      "type": "object",
+      "properties": {
+        "date": {
+          "description": "The date that the datapoint corresponds to. This represents a month value if the day field is not set.",
+          "$ref": "#/definitions/Date"
+        },
+        "value": {
+          "description": "The value of the datapoint. This will not be present when the value is zero.",
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "Date": {
+      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date).",
+      "type": "object",
+      "properties": {
+        "year": {
+          "description": "Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "month": {
+          "description": "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "day": {
+          "description": "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.",
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
   }
-  
+}

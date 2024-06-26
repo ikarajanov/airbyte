@@ -4,10 +4,9 @@
       "stream": {
         "name": "base_info",
         "json_schema": {},
-        "default_cursor_field": ["as_of_time"],
-        "supported_sync_modes": ["full_refresh", "incremental"]
+        "supported_sync_modes": ["full_refresh"]
       },
-      "sync_mode": "incremental",
+      "sync_mode": "full_refresh",
       "destination_sync_mode": "overwrite"
     }
   ]

@@ -1,0 +1,27 @@
+[build-system]
+requires = [ "poetry-core>=1.0.0",]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+version = "0.1.0"
+name = "source-google-business-information"
+description = "Source implementation for google-business-information."
+authors = [ "Airbyte <contact@airbyte.io>",]
+license = "MIT"
+readme = "README.md"
+documentation = "https://docs.airbyte.com/integrations/sources/google-business-information"
+homepage = "https://airbyte.com"
+repository = "https://github.com/airbytehq/airbyte"
+packages = [ { include = "source_google_business_information" }, {include = "main.py" } ]
+
+[tool.poetry.dependencies]
+python = "^3.9,<3.12"
+airbyte-cdk = "^0"
+
+[tool.poetry.scripts]
+source-google-business-information = "source_google_business_information.run:run"
+
+[tool.poetry.group.dev.dependencies]
+requests-mock = "*"
+pytest-mock = "*"
+pytest = "*"
