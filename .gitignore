@@ -103,9 +103,3 @@ scan-journal.log
 
 # mvn
 target/
-
-*.class
-*.jsonl
-*.kt
-*/generated/*
-**/bin/*
